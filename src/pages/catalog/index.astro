@@ -48,7 +48,7 @@ const activeCollections = collData.filter((c) => c.productCount > 0);
   <section class="container-x py-12 sm:py-16">
     {activeCollections.length > 0 && (
       <div class="mb-12 rounded-md border border-success/25 bg-success-soft px-4 py-3 text-sm text-success">
-        <strong class="font-semibold">{totalProducts} products live</strong> — the catalog grows by adding rows to the product CSV.
+        <strong class="font-semibold">{totalProducts} products live</strong>.
       </div>
     )}
 
@@ -66,7 +66,7 @@ const activeCollections = collData.filter((c) => c.productCount > 0);
 
           {empty ? (
             <p class="mt-6 rounded-md border border-dashed border-line-strong bg-paper px-4 py-3 text-sm text-ink-faint">
-              This library’s collection pages are ready — products will appear here as soon as they’re added to the catalog CSV.
+              This library’s collection pages will appear here as soon as they’re added.
               <a href="/request/" class="font-semibold text-brand underline-offset-2 hover:underline"> Request a skill from this library →</a>
             </p>
           ) : (
