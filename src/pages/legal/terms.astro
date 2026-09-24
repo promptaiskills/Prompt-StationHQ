@@ -1,0 +1,61 @@
+---
+/**
+ * /legal/terms/ — terms of service TEMPLATE.
+ * ⚠️ REVIEW BEFORE LAUNCH: replace [YOUR ...] placeholders and confirm the
+ * wording with professional advice before going live.
+ */
+import BaseLayout from '../../components/BaseLayout.astro';
+import { SITE } from '../../config/site.mjs';
+
+const email = SITE.contact.email && !/YOUR_/.test(SITE.contact.email) ? SITE.contact.email : '[YOUR_EMAIL]';
+---
+<BaseLayout title="Terms of service" description={`Terms of service for ${SITE.name}.`} canonical="/legal/terms/">
+  <section class="container-x py-12 sm:py-16">
+    <div class="mx-auto max-w-3xl">
+      <p class="rounded-md border border-warn/30 bg-warn-soft px-4 py-3 text-sm text-warn">
+        ⚠️ Draft template — review and refine these terms with professional advice before launch.
+      </p>
+      <h1 class="mt-6 font-display text-3xl font-bold tracking-tight">Terms of service</h1>
+      <p class="mt-2 text-sm text-ink-faint">Last updated: [DATE — e.g. the date you launch]</p>
+
+      <div class="mt-8 space-y-6 text-sm leading-relaxed text-ink-soft">
+        <section>
+          <h2 class="font-display text-lg font-bold text-ink">1. The service</h2>
+          <p>{SITE.name} sells digital, downloadable AI skill packs. Products are fulfilled by Gumroad, a third-party platform that processes payment and delivers files.</p>
+        </section>
+        <section>
+          <h2 class="font-display text-lg font-bold text-ink">2. Purchases & payment</h2>
+          <p>Payments are processed by Gumroad under <em>Gumroad’s terms and privacy policy</em>. Purchase confirmation, payment handling and file delivery occur on Gumroad’s infrastructure. Currency, prices and product availability are shown on the site at the time of purchase.</p>
+        </section>
+        <section>
+          <h2 class="font-display text-lg font-bold text-ink">3. License to use content</h2>
+          <p>Each purchased pack is licensed for the buyer’s own professional use [INSERT SPECIFIC LICENSE TERMS — e.g. “Single-license · commercial use allowed · resale or redistribution of the raw files is not permitted.”]. Redistribution of paid product files is prohibited.</p>
+        </section>
+        <section>
+          <h2 class="font-display text-lg font-bold text-ink">4. Digital delivery</h2>
+          <p>Delivery is instant: Gumroad emails a receipt and secure download links. If you do not receive them, check spam, then use your Gumroad library or contact us at {email}.</p>
+        </section>
+        <section>
+          <h2 class="font-display text-lg font-bold text-ink">5. Refunds</h2>
+          <p>Digital goods are non-returnable once delivered, but we handle problems fairly: contact {email} and we will work with Gumroad’s refund process on a case-by-case basis [INSERT YOUR ACTUAL REFUND POLICY — e.g. “No-questions refunds within 14 days if the product is not as described.”].</p>
+        </section>
+        <section>
+          <h2 class="font-display text-lg font-bold text-ink">6. Acceptable use</h2>
+          <p>Do not: attempt to bypass payment or file security, resell the raw files, or use products for illegal activity. The site may suspend access for abuse.</p>
+        </section>
+        <section>
+          <h2 class="font-display text-lg font-bold text-ink">7. Disclaimers</h2>
+          <p>Products are provided “as is” without warranties of merchantability or fitness for a particular purpose. Output produced using AI tools remains the user’s responsibility: verify important outputs before use, especially in regulated fields.</p>
+        </section>
+        <section>
+          <h2 class="font-display text-lg font-bold text-ink">8. Limitation of liability</h2>
+          <p>To the maximum extent permitted by law, {SITE.name} is not liable for indirect or consequential damages arising from use of the site or its products. [INSERT JURISDICTION & governing-law clause — e.g. “These terms are governed by the laws of [YOUR_JURISDICTION].”]</p>
+        </section>
+        <section>
+          <h2 class="font-display text-lg font-bold text-ink">9. Contact</h2>
+          <p>{email}</p>
+        </section>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
